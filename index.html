@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo | Login</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="images/x-icon">
+
+    <!--tailwind+daisy-->
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+<!--fonts-->
+
+
+<!--Icons-->
+<style>
+
+  *{
+    font-family: "Outfit" , sans-serif;
+  }
+
+</style>
+
+</head>
+
+
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+    <div class="logo w-[200px] mx-auto pt-32">
+        <img src="assets/Logo-full.png">
+    </div>
+
+    <div class="form pt-10 ">
+        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-neutral font-bold">Mobile Number</label>
+          <input id="input-number" maxlength="11" minlength="11"  type="text" class="input rounded-full bg-base-200" value="01234567890" 
+          placeholder=" Enter your 11 digit Number" />
+          <br>
+          <label class="label text-neutral font-bold">4 digit pin</label>
+          <input id="input-pin"  maxlength="4" minlength="4"  type="password" class="input rounded-full bg-base-200" 
+          placeholder=" Enter 4 digit pin" />
+
+        
+          <button id="login-btn" class="btn btn-primary rounded-full mt-4">Login</button>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+ </div>
+
+    <script src="scripts/login.js"> </script>
+</body>
+</html>
