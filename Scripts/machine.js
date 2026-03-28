@@ -49,13 +49,28 @@ function clearInput(id) {
 // machine -> add transaction history
 function addToHistory(message) {
     const history = document.getElementById("history-container");
+    const latestContainer = document.getElementById("latest-payment-container");
 
-    const newHistory = document.createElement("div");
-    newHistory.innerHTML = `
+    const transactionHTML = `
         <div class="transaction-card p-5 bg-base-100 rounded-xl shadow">
             ${message}
         </div>
     `;
 
+    // Full history
+    const newHistory = document.createElement("div");
+    newHistory.innerHTML = transactionHTML;
     history.prepend(newHistory);
+
+    // Latest payment
+    if (latestContainer) {
+        const latestItem = document.createElement("div");
+        latestItem.innerHTML = transactionHTML;
+        latestContainer.prepend(latestItem);
+
+        // latest section 
+        if (latestContainer.children.length > 3) {
+            latestContainer.removeChild(latestContainer.lastElementChild);
+        }
+    }
 }
