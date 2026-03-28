@@ -21,8 +21,28 @@ const pin=getValueFromInput("cashout-pin");
 if (pin==='1234') {
    alert("cashout successfull") ;
   setBalance(newBalance);
-}else{
-    alert("invalid amount");
+
+
+  //1-history container declare
+    const history = document.getElementById("history-container");
+
+    //2- create new div
+    const newHistory= document.createElement("div");
+
+    //3. add new html in new div
+
+    newHistory.innerHTML=  `
+    <div class="transaction-card p-5 bg-base-100">
+                Cashout ${cashoutAmount} TAKA Success to  ${cashoutNumber}, at ${new Date()}
+    </div>
+    `;
+
+    //4- newdiv append in history container
+
+       history.append( newHistory);
+} 
+else{
+    alert("invalid pin");
     return;
 }
 });

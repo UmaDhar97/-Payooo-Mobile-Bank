@@ -27,13 +27,14 @@ function setBalance(value) {
 function showOnly(id) {
     const addmoney =document.getElementById("add-money");
     const cashout =document.getElementById("cashout");
+    const history =document.getElementById("history");
 
     //console.log(`add Money- ${addmoney} , Cashout- ${cashout}`);
     //hide everyone
 
     addmoney.classList.add("hidden");
     cashout.classList.add("hidden");
-
+    history.classList.add("hidden");
     //show the element which contain id
 
     const selected = document.getElementById(id);
