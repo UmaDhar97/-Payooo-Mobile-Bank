@@ -25,18 +25,37 @@ function setBalance(value) {
 //machine id> hide all> show id
 
 function showOnly(id) {
-    const addmoney =document.getElementById("add-money");
-    const cashout =document.getElementById("cashout");
-    const history =document.getElementById("history");
+    const sections = [
+        "add-money",
+        "cashout",
+        "transfer-money",
+        "get-bonus",
+        "pay-bill",
+        "history"
+    ];
 
-    //console.log(`add Money- ${addmoney} , Cashout- ${cashout}`);
-    //hide everyone
+    for (const sectionId of sections) {
+        document.getElementById(sectionId).classList.add("hidden");
+    }
 
-    addmoney.classList.add("hidden");
-    cashout.classList.add("hidden");
-    history.classList.add("hidden");
-    //show the element which contain id
+    document.getElementById(id).classList.remove("hidden");
+}
 
-    const selected = document.getElementById(id);
-    selected.classList.remove("hidden");
+// machine -> clear input value
+function clearInput(id) {
+    document.getElementById(id).value = "";
+}
+
+// machine -> add transaction history
+function addToHistory(message) {
+    const history = document.getElementById("history-container");
+
+    const newHistory = document.createElement("div");
+    newHistory.innerHTML = `
+        <div class="transaction-card p-5 bg-base-100 rounded-xl shadow">
+            ${message}
+        </div>
+    `;
+
+    history.prepend(newHistory);
 }
